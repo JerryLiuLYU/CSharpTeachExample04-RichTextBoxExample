@@ -157,5 +157,26 @@ namespace Simple_Text_Editor
                 MessageBox.Show(err.Message);
             }
         }
+
+        private void buttonColor_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                Color userColor = colorDialog.Color;
+                richTextBoxText.SelectionColor = userColor;
+            }            
+        }
+
+        private void buttonFont_Click(object sender, EventArgs e)
+        {
+            FontDialog fontDialog = new FontDialog();
+            if (fontDialog.ShowDialog() == DialogResult.OK)
+            {
+                Font userFont = fontDialog.Font;
+                this.richTextBoxText.SelectionFont = userFont;
+                this.richTextBoxText.Focus();
+            }
+        }
     }
 }
